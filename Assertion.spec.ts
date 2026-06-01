@@ -7,3 +7,10 @@ test('Go with Assertion',async({page})=>{
     console.log('Assertion Passed')
 
 })
+test.only('non retry assertion',async({page})=>{
+await page.goto('https://leafground.com/select.xhtml')
+const pagetitlevalue=await page.title()
+console.log(pagetitlevalue)
+expect.soft(pagetitlevalue).toEqual('Select components')
+console.log('Assertion Passed')
+})
